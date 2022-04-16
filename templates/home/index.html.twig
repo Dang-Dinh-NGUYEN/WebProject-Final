@@ -3,18 +3,122 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}!!!!!!!!!!! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Dang Dinh NGUYEN/Project/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Dang Dinh NGUYEN/Project/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <!-- Page content-->
+    <div class="container">
+        <div class="row">
+            <!-- Blog entries-->
+            <div class="col-lg-8">
+                <!-- Featured blog post-->
+                <div class="card mb-4">
+                    <a href="#!"><img class="card-img-top" src="https://cdn.tgdd.vn/Files/2022/01/25/1412805/cach-nau-pho-bo-nam-dinh-chuan-vi-thom-ngon-nhu-hang-quan-202201250313281452.jpg" alt="..." /></a>
+                    <div class="card-body">
+                        <div class="small text-muted">January 1, 2022</div>
+                        <h2 class="card-title">Pho : the "soul" dish of Vietnamese cuisine</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                        <a class="btn btn-primary" href="#!">Read more →</a>
+                    </div>
+                </div>
+                <!-- Nested row for non-featured blog posts-->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            <a href="#!"><img class="card-img-top" src="https://statics.vinpearl.com/com-tam-ngon-o-sai-gon-0_1630562640.jpg" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">January 1, 2022</div>
+                                <h2 class="card-title h4">Com Tam : as a Saigonese</h2>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                        </div>
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            <a href="#!"><img class="card-img-top" src="https://images.unsplash.com/photo-1619900950180-4a099c7aaeb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">January 1, 2022</div>
+                                <h2 class="card-title h4">Bo Bun : an incredible taste</h2>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            <a href="#!"><img class="card-img-top" src="https://images.unsplash.com/photo-1622087250339-9295c9ef442b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1905&q=80" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">January 1, 2022</div>
+                                <h2 class="card-title h4">Vietnamese street-food : hidden gems</h2>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                        </div>
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            <a href="#!"><img class="card-img-top" src="https://images.unsplash.com/photo-1571917411767-20545014a0bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">January 1, 2022</div>
+                                <h2 class="card-title h4">Banh mi : fast food from Vietnam</h2>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+                                <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination-->
+                <nav aria-label="Pagination">
+                    <hr class="my-0" />
+                    <ul class="pagination justify-content-center my-4">
+                        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">3</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">15</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">Older</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Search widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Search</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categories widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Categories</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="#!">Cuisine</a></li>
+                                    <li><a href="#!">Culture</a></li>
+                                    <li><a href="#!">Review</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="#!">Receipts</a></li>
+                                    <li><a href="#!">DeanNGUYEN</a></li>
+                                    <li><a href="#!">Photos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Side widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Side Widget</div>
+                    <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

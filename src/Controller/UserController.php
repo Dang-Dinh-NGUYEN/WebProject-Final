@@ -24,15 +24,14 @@ class UserController extends AbstractController
     }
 
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UserRepository $userRepository): Response
+    public function new(Request $request, UserRepository $userRepository, UserPasswordEncoderInterface $encoder): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-        $user->setpassword($encoder->encodePassword($user, $user->getPassword()));// (avant la persistance);
-
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->setpassword($encoder->encodePassword($user, $user->getPassword()));// (avant la persistance);
             $userRepository->add($user);
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -52,14 +51,16 @@ class UserController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, UserRepository $userRepository): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository,UserPasswordEncoderInterface $encoder): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-        $user->setpassword($encoder->encodePassword($user, $user->getPassword()));// (avant la persistance);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $userRepository->add($user);
+            $entityManager = $this->getDoctrine()->getManager();
+            $user->setpassword($encoder->encodePassword($user, $user->getPassword()));// (avant la persistance);
+            $entityManager->persist($user);
+            $entityManager->flush();
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
