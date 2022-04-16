@@ -65,7 +65,7 @@ class Comment
     }
 
      public function __toString(){
-                return $this->getCreateAt().' '.$this->getContent();
+                return $this->getCreateAt() + ' ' + $this->getContent();
         }
 
 }
